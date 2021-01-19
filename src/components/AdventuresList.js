@@ -16,7 +16,6 @@ const AdventuresList = ({ adventures }) => {
                     </li>
                 </ul>
         )}
-        
         </div>
     );
 };
