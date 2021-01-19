@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { fetchAdventures } from '../actions/AdventuresActions'
 import AdventureForm from '../components/adventureForm'
+import AdventuresList from '../components/AdventuresList';
 
 class AdventuresContainer extends Component {
     componentDidMount(){
@@ -13,8 +14,10 @@ class AdventuresContainer extends Component {
     render() {
         return (
             <div>
-                Adventures Container
+              
+                <AdventuresList />
                 <br></br>
+               
                 <AdventureForm />
             </div>
         );
