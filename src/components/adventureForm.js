@@ -1,11 +1,26 @@
 import React, { Component  } from 'react';
+import { addAdventure } from '../actions/AdventuresActions'
+import { connect} from 'react-redux'
 
 class AdventureForm extends Component {
 
     state = {
-        name: "",
-        image_url: ""
+        name: '',
+        image_url: ''
     }
+
+    handleChange = e => {
+        const { name, value } = e.target
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handleSubmit = e => {
+        e.preventDefault()
+        this.props.addAdventure(this.state)
+    }
+
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
@@ -24,6 +39,6 @@ class AdventureForm extends Component {
     }
 }
 
-export default AdventureForm;
+export default connect(null, { addAdventure })(AdventureForm);
 
 //storestate == redux store it's global  localstate == component state is isolate to that component only
