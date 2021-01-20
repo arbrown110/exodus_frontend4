@@ -1,12 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux'
+
 
 const AdventuresList = ({ adventures }) => {
     return (
         <div>
             <h1>Topics to talk about :</h1>
             {adventures.map(adventure => 
-                <ul key={adventure.id}>
+                <ul key={adventure.id} to={`/adventures/${adventure.id}`}>
                     <li >
                         {adventure.name}
                         <br>
@@ -20,8 +20,8 @@ const AdventuresList = ({ adventures }) => {
     );
 };
 
-const mapStateToProps = state => {
-    return { adventures: state.adventures }
-}
+// const mapStateToProps = state => {
+//     return { adventures: state.adventures }
+// }
 
-export default connect(mapStateToProps)(AdventuresList);
+export default AdventuresList;

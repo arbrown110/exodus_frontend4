@@ -1,15 +1,15 @@
 // creating an action that is going to fetch the adventures from api 
 
 export const fetchAdventures = () => {
-    return dispatch => {
+    return (dispatch) => {
         fetch('http://localhost:3000/adventures')
         .then(resp => resp.json())
         .then(adventures => dispatch({ type: 'FETCH_ADVENTURES', payload: adventures}))
-    }
-}
+    };
+};
 
 export const addAdventure = (adventure) => {
-    return dispatch => {
+    return (dispatch) => {
         fetch('http://localhost:3000/adventures', {
             method: 'POST',
             body: JSON.stringify(adventure),

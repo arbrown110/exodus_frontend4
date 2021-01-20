@@ -1,4 +1,4 @@
-const adventuresReducer = (state = { adventures: [] }, action) => {
+export const adventuresReducer = (state = { adventures: [] }, action) => {
 
     switch (action.type) {
   
@@ -39,7 +39,7 @@ const adventuresReducer = (state = { adventures: [] }, action) => {
     }
   }
   
-  export default adventuresReducer;
+
 
 
 
