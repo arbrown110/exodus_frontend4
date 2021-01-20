@@ -7,23 +7,26 @@ const AdventuresList = props => {
             <Link to='/adventures/new' className= 'NewAdventure' role= 'button'>Add Adventure</Link>
             
             <h3>Topics to talk about :</h3>
-            {props.adventures.map(adventure => 
-                <ul key={adventure.id} to={`/adventures/${adventure.id}`}>
+            {props.adventures && props.adventures.map(adventure => 
+                <Link key={adventure.id} to={`/adventures/${adventure.id}`}>
                     <li >
-                        {adventure.name}
+                        <div>{adventure.name}</div>
                         <br>
                         </br>
                         <br></br>
-                        {adventure.image_url} 
+                         <div>{adventure.image_url}</div>
                     </li>
-                </ul>
-        )}
+                </Link>
+            )}
         </div>
     );
 };
 
 // const mapStateToProps = state => {
-//     return { adventures: state.adventures }
+//     return {
+
+//         adventures: state.adventures
+//     }
 // }
 
 export default AdventuresList;

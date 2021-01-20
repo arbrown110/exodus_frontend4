@@ -16,7 +16,7 @@ class AdventuresContainer extends Component {
         return (
             <div>
               
-                <AdventuresList />
+                <AdventuresList adventures={this.props.adventures && this.props.adventures.events}/>
                 <br></br>
                
                 <AdventureForm />
@@ -26,5 +26,11 @@ class AdventuresContainer extends Component {
     }
 }
 
-export default connect(null, { fetchAdventures })(AdventuresContainer);
+const mapStateToProps = (state) => {
+    return {
+        adventures: state.adventures
+    }
+}
+
+export default connect(mapStateToProps, { fetchAdventures })(AdventuresContainer);
 
