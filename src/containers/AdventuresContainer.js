@@ -6,6 +6,7 @@ import { fetchAdventures } from '../actions/AdventuresActions'
 import AdventureForm from '../components/adventureForm'
 import AdventuresList from '../components/AdventuresList';
 
+
 class AdventuresContainer extends Component {
     componentDidMount(){
         this.props.fetchAdventures()
@@ -19,6 +20,7 @@ class AdventuresContainer extends Component {
                 <br></br>
                
                 <AdventureForm />
+                
             </div>
         );
     }

@@ -19,3 +19,15 @@ export const addAdventure = (adventure) => {
         .then(adventure => dispatch({ type: 'ADD_ADVENTURE', payload: adventure}))
     }
 }
+
+export const deleteAdventure = adventureId => {
+    return (dispatch) => {
+      fetch(`http://localhost:3000/adventures/${adventureId}`, {
+        method: 'DELETE'
+      })
+      .then(res => res.json())
+      .then(adventure => {
+        dispatch({type: 'DELETE_ADVENTURE', payload: adventure.id})
+      })
+    };
+  };

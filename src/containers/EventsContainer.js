@@ -5,6 +5,7 @@ import EventsList from '../components/EventsList';
 
 class EventsContainer extends Component {
 
+
     render() {
         return (
             <div>

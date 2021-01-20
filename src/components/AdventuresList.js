@@ -1,11 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
-
-const AdventuresList = ({ adventures }) => {
+const AdventuresList = props => {
     return (
         <div>
-            <h1>Topics to talk about :</h1>
-            {adventures.map(adventure => 
+            <Link to='/adventures/new' className= 'NewAdventure' role= 'button'>Add Adventure</Link>
+            
+            <h3>Topics to talk about :</h3>
+            {props.adventures.map(adventure => 
                 <ul key={adventure.id} to={`/adventures/${adventure.id}`}>
                     <li >
                         {adventure.name}
@@ -25,3 +27,6 @@ const AdventuresList = ({ adventures }) => {
 // }
 
 export default AdventuresList;
+
+
+/// how can I make it better?
