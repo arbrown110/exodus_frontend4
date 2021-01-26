@@ -1,9 +1,9 @@
-export const adventuresReducer = (state = { adventures: [] }, action) => {
+export default function adventuresReducer (state = { adventures: [] }, action)  {
 
     switch (action.type) {
   
       case 'FETCH_ADVENTURES':
-        return {...state, adventures: action.payload};
+        return {adventures: action.payload};
   
       case 'ADD_ADVENTURE':
         return {...state, adventures: [...state.adventures, action.payload]};

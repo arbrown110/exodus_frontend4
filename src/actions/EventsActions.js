@@ -1,6 +1,6 @@
 export const addEvent = (activity, adventureId) => {
     return (dispatch) => {
-      fetch(`http://localhost:3000/adventures/${adventureId}/events`, {
+      fetch(`/adventures/${adventureId}/events`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(activity)
@@ -15,7 +15,7 @@ export const addEvent = (activity, adventureId) => {
   // deleting events
 export const deleteEvent = (eventId, adventureId) => {
     return (dispatch) => {
-      fetch(`http://localhost:3000/adventures/${adventureId}/events/${eventId}`, {
+      fetch(`/adventures/${adventureId}/events/${eventId}`, {
         method: 'DELETE'
       })
       .then(res => res.json())

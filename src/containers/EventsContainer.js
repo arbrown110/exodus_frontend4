@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import EventForm from '../components/eventForm'
+// import EventForm from '../components/eventForm'
 import EventsList from '../components/EventsList';
 
 class EventsContainer extends Component {
-
+debugger;
 
     render() {
         return (
@@ -13,7 +13,7 @@ class EventsContainer extends Component {
                 <EventsList events={this.props.adventure && this.props.adventures.events} />
                 <br></br>
                
-                <EventForm adventure={this.props.adventure} />
+                {/* <EventForm adventure={this.props.adventure} /> */}
             </div>
         );
     }

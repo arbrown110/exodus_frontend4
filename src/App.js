@@ -2,7 +2,9 @@
 import './App.css';
 import React from 'react';
 import Main from './components/Main'
-import AdventuresContainer from './containers/AdventuresContainer';
+import { connect } from 'react-redux'
+import { withRouter } from 'react-router-dom'
+//import AdventuresContainer from './containers/AdventuresContainer';
 
 const App = () =>  {
   return (
@@ -10,9 +12,18 @@ const App = () =>  {
       
        <Main />
       
-      <AdventuresContainer />
+      {/* <AdventuresContainer /> */}
     </div>
   );
 }
 
-export default App;
+
+const mapStateToProps = state => {
+  return {
+
+      adventures: state.adventures
+  }
+}
+
+// export default App;
+export default withRouter(connect(mapStateToProps, {})(App));
